@@ -247,6 +247,10 @@ main {
   padding-top: 2em;
   flex: 1;
 
+  a {
+    text-decoration: none;
+  }
+
   /* /Logo */
 
   .logo-container {
@@ -376,7 +380,6 @@ main {
     padding: 0.2em 0.5em;
     border: none;
     border-bottom: 3px dotted rgba(255, 105, 180, 0.5);
-    /*animation: color-change-2x 20s ease infinite;*/
 
     &:focus {
       outline: none;

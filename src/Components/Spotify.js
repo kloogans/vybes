@@ -11,6 +11,10 @@ class Spotify extends Component {
     this.refs.query.value = ''
   }
 
+  _submit = (e) => {
+    e.preventDefault()
+  }
+
   render () {
     if (this.props.built) {
       return (<span />)

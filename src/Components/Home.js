@@ -12,7 +12,6 @@ class Home extends Component {
         <Spotify />
         <SelectedArtists />
         <BuildButton />
-        {/* <Playlist /> */}
       </div>
     } else {
       return <div className='Home'>
@@ -23,7 +22,6 @@ class Home extends Component {
   }
 }
 
-// Container functionality.
 const mapStateToProps = (state) => {
   return {
     artists: state.selected.artists,

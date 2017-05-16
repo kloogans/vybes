@@ -4,10 +4,8 @@ let initialState = {
   built: false
 }
 
-/**
- * Randomize array element order in-place.
- * Using Durstenfeld shuffle algorithm. Taken from stackoverflow.
- */
+ // Randomize array element order in-place.
+
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1))
@@ -18,7 +16,7 @@ const shuffleArray = (array) => {
   return array.splice(0, 10)
 }
 
-export default function (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'BUILDING_PLAYLIST':
       state = {...state,

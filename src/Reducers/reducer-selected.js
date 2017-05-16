@@ -12,7 +12,7 @@ let initialState = {
   artists: []
 }
 
-export default function (state = initialState, action) {
+export default (state = initialState, action) => {
   let artist = action.payload
   switch (action.type) {
     case 'SELECT_ARTIST':

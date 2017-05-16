@@ -3,7 +3,7 @@ let initialState = {
   fetching: false
 }
 
-export default function (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'SELECT_ARTIST':
       state = {...state, results: []}

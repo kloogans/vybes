@@ -18,7 +18,6 @@ class BuildButton extends Component {
   }
 }
 
-// Container functionality.
 const mapStateToProps = (state) => {
   return {
     artists: state.selected.artists,
@@ -28,14 +27,11 @@ const mapStateToProps = (state) => {
   }
 }
 
-// Pass in action to component
+// Passes an action to a component
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
     buildPlaylist: buildPlaylist
   }, dispatch)
 }
 
-// Export this file as a container, aka smart component.
 export default connect(mapStateToProps, matchDispatchToProps)(BuildButton)
-
-// export default BuildButton
