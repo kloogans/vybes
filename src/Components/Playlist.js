@@ -42,7 +42,7 @@ class Playlist extends Component {
             </li>
           </ul> */}
           <iframe
-            src={`https://embed.spotify.com/?theme=white&uri=spotify:trackset:My Playlist:${this.props.tracks.join()}`}
+            src={`https://embed.spotify.com/?theme=black&uri=spotify:trackset:My Playlist:${this.props.tracks.join()}`}
             height='400'
             width='100%'
           />
@@ -53,18 +53,6 @@ class Playlist extends Component {
         <span />
       )
     }
-    // else if (this.props.artists.length !== 0) {
-    //   return (
-    //     <div className='container section spotify-iframe'>
-    //       <Link to='/playlist'>
-    //         <div className='playlist-btn'
-    //           onClick={() => this.props.buildPlaylist(this.props.artists)}>
-    //           Create Playlist
-    //         </div>
-    //       </Link>
-    //     </div>
-    //   )
-    // }
   }
 }
 
