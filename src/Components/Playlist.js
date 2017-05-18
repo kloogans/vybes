@@ -31,7 +31,6 @@ class Playlist extends Component {
     } else if (this.props.built) {
       return (
         <div className='container section'>
-          <h2 className='big-heading centered'>Playlist</h2>
           {/* <ul className='playlist'>
             <li className='playlist-item'>
               <audio ref='player' id='player' autoPlay>

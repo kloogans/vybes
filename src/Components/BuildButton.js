@@ -11,7 +11,21 @@ class BuildButton extends Component {
       <Link to='/playlist'>
         <div className='playlist-btn'
           onClick={() => this.props.buildPlaylist(this.props.artists)}>
-          Create Playlist
+          <div className='sound-bars'>
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+            <div className='bar' />
+          </div>
         </div>
       </Link>
     </div>

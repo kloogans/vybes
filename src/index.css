@@ -581,15 +581,35 @@ main {
 
   /* Playlist */
   .playlist-btn {
-    margin: 2em auto;
-    width: 250px;
+    @include flex(row, center, center);
+    @include size(51vw, 2.5em);
+    position: relative;
+    background-color: transparent;
+    border: 1px dashed rgba(51, 51, 51, 0.3);
+    color: lighten($primary-black, 30%);
     font-size: 1.2em;
-    color: $primary-black;
-    text-align: center;
-    padding: 1em;
-    border: 1px solid #e8b9b4;
-    border-radius: 3px;
-    transition: all 300ms ease-in-out;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+
+    &:hover {
+      border: 1px dashed rgba(51, 51, 51, 0);
+      color: lighten($primary-black, 25%);
+      background: rgba(135, 206, 235, 0.4);
+    }
+
+    @media (max-width: 720px) {
+      .playlist-btn {
+        @include size(81vw, 2.5em);
+
+        &:active {
+          outline: 0;
+          border: 1px dashed rgba(51, 51, 51, 0);
+          color: lighten($primary-black, 25%);
+          background: rgba(135, 206, 235, 0.4);
+        }
+      }
+    }
   }
 
   .playlist-btn:hover {
@@ -598,9 +618,103 @@ main {
     cursor: pointer;
   }
 
+  .sound-bars {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100%;
+    left: 50%;
+  }
+
+  .bar {
+    @include flex(row, center, center);
+    background: #666;
+    bottom: 1px;
+    height: 2px;
+    width: 2px;
+    animation: sound 0ms -800ms linear infinite alternate;
+  }
+
+  @keyframes sound {
+    0% {
+      opacity: 0.35;
+      height: 3px;
+    }
+
+    100% {
+      opacity: 1;
+      height: 28px;
+    }
+  }
+
+  .bar:nth-child(1) {
+    left: 1px;
+    animation-duration: 534ms;
+  }
+
+  .bar:nth-child(2) {
+    left: 5px;
+    animation-duration: 433ms;
+  }
+
+  .bar:nth-child(3) {
+    left: 9px;
+    animation-duration: 497ms;
+  }
+
+  .bar:nth-child(4) {
+    left: 13px;
+    animation-duration: 458ms;
+  }
+
+  .bar:nth-child(5) {
+    left: 17px;
+    animation-duration: 400ms;
+  }
+
+  .bar:nth-child(6) {
+    left: 21px;
+    animation-duration: 427ms;
+  }
+
+  .bar:nth-child(7) {
+    left: 25px;
+    animation-duration: 441ms;
+  }
+
+  .bar:nth-child(8) {
+    left: 29px;
+    animation-duration: 419ms;
+  }
+
+  .bar:nth-child(9) {
+    left: 33px;
+    animation-duration: 487ms;
+  }
+
+  .bar:nth-child(10) {
+    left: 37px;
+    animation-duration: 417ms;
+  }
+
+  .bar:nth-child(11) {
+    left: 41px;
+    animation-duration: 497ms;
+  }
+
+  .bar:nth-child(12) {
+    left: 45px;
+    animation-duration: 414ms;
+  }
+
+  .bar:nth-child(13) {
+    left: 49px;
+    animation-duration: 457ms;
+  }
+
   iframe {
     border-width: 0;
     width: 100%;
+    animation: fade-in 0.5s ease-out;
   }
 
   .spotify-iframe {
