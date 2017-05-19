@@ -17,12 +17,21 @@ class Spotify extends Component {
 
   render () {
     if (this.props.built) {
-      return (<span />)
+      return <div className='logo-container'>
+        <div className='circles'>
+          <div className='logo'>
+            <div className='logo-loader' />
+          </div>
+        </div>
+      </div>
     } else if (this.props.fetchState || this.props.results.length === 0) {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='artist-input' type='text' ref='query' placeholder='Artist search'
+            <input className='artist-input'
+              type='text'
+              ref='query'
+              placeholder='Artist search'
               onChange={() => this.props.searchArtist(this.refs.query.value)} />
           </form>
         </div>
@@ -31,14 +40,21 @@ class Spotify extends Component {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='artist-input' type='text' ref='query' placeholder='Artist search'
-              onChange={() => this.props.searchArtist(this.refs.query.value)} />
+            <input className='artist-input'
+              type='text'
+              ref='query'
+              placeholder='Artist search'
+              onChange={() => this.props.searchArtist(this.refs.query.value)}
+            />
           </form>
           <div className='live-results'>
             <h2 className='small-heading title'>Suggestions</h2>
             <ul>
               {this.props.results.map((artist) =>
-                <li className='results-tag' key={artist.id} onClick={() => this.handleSelect(artist)}>{artist.name}</li>
+                <li className='results-tag' key={artist.id}
+                  onClick={() => this.handleSelect(artist)}>
+                  {artist.name}
+                </li>
               )}
             </ul>
           </div>
