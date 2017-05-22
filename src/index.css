@@ -164,7 +164,7 @@ header {
     .menu-open:checked ~ .menu-item {
       transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
       color: $primary-black;
-      background-color: rgb(228, 223, 252);
+      background-color: $menu-background;
       border-radius: 0;
     }
 
@@ -200,7 +200,7 @@ header {
       .menu-open:checked ~ .menu-item {
         width: 200px;
         right: 0;
-        background-color: rgb(228, 223, 252);
+        background-color: $menu-background;
         color: $primary-black;
         border-radius: 0;
         transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -308,19 +308,6 @@ main {
     text-transform: uppercase;
   }
 
-  ul.playlist {
-    width: 100vw;
-
-    @include flex(column, center, center);
-
-    li.playlist-item {
-      width: 80%;
-      height: 100px;
-      background-color: blue;
-      border: 1px solid red;
-    }
-  }
-
   /* Search */
   ul {
     @include flex(column, center, center);
@@ -368,12 +355,14 @@ main {
     color: rgba(0, 0, 0, 0.4);
   }
 
+  /* Search Results */
+
   .live-results {
     position: relative;
     min-height: 4em;
     margin-top: 1.6em;
     padding: 0.5em 0;
-    border-top: 1px solid #e8b9b4;
+    border-top: 1px solid $results-divider;
     animation: fade-in 0.2s ease-in;
   }
 
@@ -393,9 +382,9 @@ main {
 
   .small-heading {
     margin: 0;
-    font-size: 1em;
+    font-size: 0.85em;
     font-weight: 300;
-    color: $primary-black;
+    color: lighten($primary-black, 45%);
     opacity: 0.8em;
   }
 
@@ -422,16 +411,19 @@ main {
     margin: 0;
     margin-bottom: 0.5em;
     background-color: rgba(135, 206, 235, 0.75);
-    color: #9c6760;
+    color: $primary-white;
     font-size: 0.8em;
     font-weight: 300;
     padding: 0.5em 1em;
+    border: 2px dotted transparent;
     transition: all 300ms ease-in-out;
-  }
 
-  .results-tag:hover {
-    cursor: pointer;
-    background-color: rgba(237, 221, 212, 0.8);
+    &:hover {
+      background-color: transparent;
+      color: $primary-black;
+      cursor: pointer;
+      border: 2px solid rgba(255, 105, 180, 0.5);
+    }
   }
 
   /* Selected Artist */
@@ -442,18 +434,18 @@ main {
 
   .selected-artists {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
-    border-top: 1px solid rgba(135, 206, 235, 0.75);
+    grid-template-columns: repeat(3, 1fr);
     margin: 0.5em 0;
+    border-top: 1px solid rgba(135, 206, 235, 0.75);
     animation: fade-in 0.3s ease-in;
   }
 
   .artist-card {
     @include flex(column, center, center);
+    position: relative;
     width: 30vw;
     min-height: 270px;
-    position: relative;
     margin: 1em;
     overflow: hidden;
     animation: fade-in 0.5s ease-in;
@@ -544,7 +536,7 @@ main {
   }
 
   /* Playlist */
-  .playlist-btn {
+  .playlist-button {
     @include flex(row, center, center);
     @include size(51vw, 2.5em);
     position: relative;
@@ -563,7 +555,7 @@ main {
     }
 
     @media screen and (max-width: 720px) {
-      .playlist-btn {
+      .playlist-button {
         @include size(81vw, 2.5em);
 
         &:active {
@@ -574,12 +566,6 @@ main {
         }
       }
     }
-  }
-
-  .playlist-btn:hover {
-    color: #000;
-    background-color: rgba(250, 250, 250, 0.5);
-    cursor: pointer;
   }
 
   .sound-bars {
@@ -593,6 +579,9 @@ main {
     @include size(2px, 2px);
     background: #666;
     bottom: 1px;
+  }
+
+  .move {
     animation: sound 0ms -800ms linear infinite alternate;
   }
 
