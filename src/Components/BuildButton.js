@@ -21,10 +21,6 @@ class BuildButton extends Component {
             <div className='bar' />
             <div className='bar' />
             <div className='bar' />
-            <div className='bar' />
-            <div className='bar' />
-            <div className='bar' />
-            <div className='bar' />
           </div>
         </div>
       </Link>

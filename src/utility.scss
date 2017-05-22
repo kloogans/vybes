@@ -39,6 +39,15 @@
   width: $width;
   height: $height;
 }
+
+// Backgrounds
+@mixin background-props($url, $size) {
+  background-image: url($url);
+  background-repeat: no-repeat; //replace with variable for flexibility
+  background-size: $size;
+  background-position: center;//same here
+}
+
 // Colors
 $primary-black: #333;
 $primary-white: #f7f7f7;

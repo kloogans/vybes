@@ -64,7 +64,6 @@ class Spotify extends Component {
   }
 }
 
-// Container functionality.
 const mapStateToProps = (state) => {
   return {
     results: state.search.results,
@@ -81,5 +80,4 @@ const matchDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-// Export this file as a container, aka smart component.
 export default connect(mapStateToProps, matchDispatchToProps)(Spotify)

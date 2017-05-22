@@ -12,7 +12,6 @@ body,
 
 body {
   width: 100vw;
-  font-family: '$primary-font', sans-serif;
   background:
     url(./splash-bg.jpg),
     linear-gradient(
@@ -25,27 +24,17 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: screen;
+  margin: 0;
+  font-family: '$primary-font', sans-serif;
   font-size: 16px;
   font-weight: 300;
   overflow-x: hidden;
-  margin: 0;
-}
-
-@keyframes color-change-2x {
-  0% { background: rgba(212, 5, 203, 0.1); }
-  25% { background: rgba(246, 174, 12, 0.1); }
-  50% { background: rgba(178, 44, 255, 0.1); }
-  75% { background: rgba(5, 156, 212, 0.1); }
-  100% { background: rgba(212, 5, 203, 0.1); }
 }
 
 .app {
-  margin: 0;
-  display: flex;
+  @include flex(column, space-between, center);
   min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  margin: 0;
   overflow-x: hidden;
 }
 
@@ -53,158 +42,123 @@ header {
   width: 100%;
   height: 5em;
 
+  /* Menu */
+
   nav {
     @include flex(row, flex-end, center);
     width: 100%;
-  }
 
-  nav.menu {
-    height: 2em;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu-item,
-  .menu-open-button {
-    @include size(80px, 80px);
-    position: absolute;
-    top: 20px;
-    background: transparent;
-    margin-left: -80px;
-    color: transparent;
-    text-align: center;
-    line-height: 80px;
-    border-radius: 100%;
-    transform: translate3d(0, 0, 0);
-    transition: transform ease-out 200ms;
-  }
-
-  .menu-item {
-    opacity: 0;
-  }
-
-  .menu-open {
-    display: none;
-  }
-
-  .hamburger {
-    @include size(25px, 1px);
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -12.5px;
-    margin-top: -1.5px;
-    background: $primary-black;
-    transition: transform 200ms;
-  }
-
-  .hamburger-1 {
-    transform: translate3d(0, -8px, 0);
-  }
-
-  .hamburger-2 {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .hamburger-3 {
-    transform: translate3d(0, 8px, 0);
-  }
-
-  .menu-open:checked + .menu-open-button .hamburger-1 {
-    transform: translate3d(0, 0, 0) rotate(45deg);
-  }
-
-  .menu-open:checked + .menu-open-button .hamburger-2 {
-    transform: translate3d(0, 0, 0) scale(0.1, 1);
-  }
-
-  .menu-open:checked + .menu-open-button .hamburger-3 {
-    transform: translate3d(0, 0, 0) rotate(-45deg);
-  }
-
-  .menu {
-    @include size(100%, 150px);
-    position: absolute;
-    box-sizing: border-box;
-    font-size: 20px;
-    text-align: left;
-    padding-left: 80px;
-    padding-top: 20px;
-  }
-
-  .menu-item:hover {
-    background-color: rgba(62, 163, 228, 0.55);
-  }
-
-  .menu-item:nth-child(3) {
-    transition-duration: 180ms;
-  }
-
-  .menu-item:nth-child(4) {
-    transition-duration: 180ms;
-  }
-
-  .menu-item:nth-child(5) {
-    transition-duration: 180ms;
-  }
-
-  .menu-item:nth-child(6) {
-    transition-duration: 180ms;
-  }
-
-  .menu-open-button {
-    z-index: 2;
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-duration: 400ms;
-    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-    cursor: pointer;
-  }
-
-  .menu-open-button:hover {
-    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
-  }
-
-  .menu-open:checked + .menu-open-button {
-    transition-timing-function: linear;
-    transition-duration: 200ms;
-    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
-  }
-
-  .menu-open:checked ~ .menu-item {
-    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    color: $primary-black;
-    background-color: rgb(228, 223, 252);
-    border-radius: 0;
-  }
-
-  .menu-open:checked ~ .menu-item:nth-child(3) {
-    transition-duration: 190ms;
-    transform: translate3d(-100px, 0, 0);
-    opacity: 1;
-  }
-
-  .menu-open:checked ~ .menu-item:nth-child(4) {
-    transition-duration: 290ms;
-    transform: translate3d(-180px, 0, 0);
-    opacity: 1;
-  }
-
-  .menu-open:checked ~ .menu-item:nth-child(5) {
-    transition-duration: 390ms;
-    transform: translate3d(-260px, 0, 0);
-    opacity: 1;
-  }
-
-  .menu-open:checked ~ .menu-item:nth-child(6) {
-    transition-duration: 490ms;
-    transform: translate3d(-340px, 0, 0);
-    opacity: 1;
-  }
-
-  @media (max-width: 1080px) {
     nav.menu {
-      padding-left: 8vw;
+      height: 2em;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-item,
+    .menu-open-button {
+      @include size(80px, 80px);
+      position: absolute;
+      top: 20px;
+      margin-left: -80px;
+      background: transparent;
+      color: transparent;
+      text-align: center;
+      line-height: 80px;
+      border-radius: 100%;
+      transform: translate3d(0, 0, 0);
+      transition: transform ease-out 200ms;
+    }
+
+    .menu-item {
+      opacity: 0;
+    }
+
+    .menu-open {
+      display: none;
+    }
+
+    .hamburger {
+      @include size(25px, 1px);
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      margin-left: -12.5px;
+      margin-top: -1.5px;
+      background: $primary-black;
+      transition: transform 200ms;
+    }
+
+    .hamburger-1 {
+      transform: translate3d(0, -8px, 0);
+    }
+
+    .hamburger-2 {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .hamburger-3 {
+      transform: translate3d(0, 8px, 0);
+    }
+
+    .menu-open:checked + .menu-open-button .hamburger-1 {
+      transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+
+    .menu-open:checked + .menu-open-button .hamburger-2 {
+      transform: translate3d(0, 0, 0) scale(0.1, 1);
+    }
+
+    .menu-open:checked + .menu-open-button .hamburger-3 {
+      transform: translate3d(0, 0, 0) rotate(-45deg);
+    }
+
+    .menu {
+      @include size(100%, 150px);
+      position: absolute;
+      box-sizing: border-box;
+      padding-left: 80px;
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .menu-item:hover {
+      background-color: rgba(62, 163, 228, 0.55);
+    }
+
+    .menu-item:nth-child(3) {
+      transition-duration: 180ms;
+    }
+
+    .menu-item:nth-child(4) {
+      transition-duration: 180ms;
+    }
+
+    .menu-item:nth-child(5) {
+      transition-duration: 180ms;
+    }
+
+    .menu-item:nth-child(6) {
+      transition-duration: 180ms;
+    }
+
+    .menu-open-button {
+      z-index: 2;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-duration: 400ms;
+      transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+      cursor: pointer;
+    }
+
+    .menu-open-button:hover {
+      transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+    }
+
+    .menu-open:checked + .menu-open-button {
+      transition-timing-function: linear;
+      transition-duration: 200ms;
+      transform: scale(0.8, 0.8) translate3d(0, 0, 0);
     }
 
     .menu-open:checked ~ .menu-item {
@@ -212,42 +166,79 @@ header {
       color: $primary-black;
       background-color: rgb(228, 223, 252);
       border-radius: 0;
-      width: 200px;
-      right: 0;
-      z-index: 2;
     }
 
     .menu-open:checked ~ .menu-item:nth-child(3) {
       transition-duration: 190ms;
-      transform: translate3d(0, 100px, 0);
+      transform: translate3d(-100px, 0, 0);
       opacity: 1;
     }
 
     .menu-open:checked ~ .menu-item:nth-child(4) {
       transition-duration: 290ms;
-      transform: translate3d(0, 180px, 0);
+      transform: translate3d(-180px, 0, 0);
       opacity: 1;
     }
 
     .menu-open:checked ~ .menu-item:nth-child(5) {
       transition-duration: 390ms;
-      transform: translate3d(0, 260px, 0);
+      transform: translate3d(-260px, 0, 0);
       opacity: 1;
     }
 
     .menu-open:checked ~ .menu-item:nth-child(6) {
       transition-duration: 490ms;
-      transform: translate3d(0, 340px, 0);
+      transform: translate3d(-340px, 0, 0);
       opacity: 1;
+    }
+
+    @media screen and (max-width: 1080px) {
+      nav.menu {
+        padding-left: 8vw;
+      }
+
+      .menu-open:checked ~ .menu-item {
+        width: 200px;
+        right: 0;
+        background-color: rgb(228, 223, 252);
+        color: $primary-black;
+        border-radius: 0;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 2;
+      }
+
+      .menu-open:checked ~ .menu-item:nth-child(3) {
+        transition-duration: 190ms;
+        transform: translate3d(0, 100px, 0);
+        opacity: 1;
+      }
+
+      .menu-open:checked ~ .menu-item:nth-child(4) {
+        transition-duration: 290ms;
+        transform: translate3d(0, 180px, 0);
+        opacity: 1;
+      }
+
+      .menu-open:checked ~ .menu-item:nth-child(5) {
+        transition-duration: 390ms;
+        transform: translate3d(0, 260px, 0);
+        opacity: 1;
+      }
+
+      .menu-open:checked ~ .menu-item:nth-child(6) {
+        transition-duration: 490ms;
+        transform: translate3d(0, 340px, 0);
+        opacity: 1;
+      }
     }
   }
 }
 
 main {
-  @include flex(column, center, center);
   @include size(100vw, 100%);
-  padding-top: 2em;
+  @include flex(column, center, center);
   flex: 1;
+  padding-top: 2em;
 
   a {
     text-decoration: none;
@@ -256,23 +247,19 @@ main {
   /* /Logo */
 
   .logo-container {
-    @include size(100%, 100%);
     @include flex(column, center, center);
+    @include size(100%, 100%);
     min-height: 150px;
     padding: 1em 0 3em;
     overflow: hidden;
   }
 
   .logo-dots {
-    position: absolute;
-
     @include size(137px, 137px);
-    background-image: url('logo-dots.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.6;
+    @include background-props('logo-dots.svg', contain);
+    position: absolute;
     margin: auto;
+    opacity: 0.6;
     animation: rotateThis 40s linear infinite;
   }
 
@@ -305,28 +292,9 @@ main {
 
   .logo {
     @include flex(row, center, center);
-    background: url('vybes-logo.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    mix-blend-mode: screen;
-
     @include size(130px, 130px);
-  }
-
-  .circle {
-    @include size(100px, 100px);
-    box-shadow:
-      0 1px 0 0 rgba(225, 131, 194, 0.25),
-      0 -1px 0 0 rgba(165, 181, 222, 0.25),
-      1px 0 0 0 rgba(225, 131, 194, 0.25),
-      -1px 0 0 0 rgba(165, 181, 222, 0.25),
-      1px -1px 0 0 rgba(195, 156, 208, 0.5),
-      -1px 1px 0 0 rgba(195, 156, 208, 0.5),
-      1px 1px 0 0 rgba(255, 105, 180, 0.75),
-      -1px -1px 0 0 rgba(135, 206, 235, 0.75);
-    border-radius: 100%;
-    animation: rotateThis 10s linear infinite;
+    @include background-props('vybes-logo.svg', contain);
+    mix-blend-mode: screen;
   }
 
   /* Home */
@@ -390,7 +358,7 @@ main {
     }
   }
 
-  @media (max-width: 720px) {
+  @media screen and (max-width: 720px) {
     .artist-input {
       width: 80vw;
     }
@@ -451,14 +419,14 @@ main {
   }
 
   .results-tag {
-    background-color: rgba(135, 206, 235, 0.75);
     margin: 0;
     margin-bottom: 0.5em;
+    background-color: rgba(135, 206, 235, 0.75);
     color: #9c6760;
     font-size: 0.8em;
     font-weight: 300;
     padding: 0.5em 1em;
-    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
   }
 
   .results-tag:hover {
@@ -492,18 +460,14 @@ main {
   }
 
   .artist-content {
-    width: 100%;
-    height: 100%;
-    padding: 2em 0.8em 1em;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
-    align-items: center;
+    @include flex(column, center, center);
+    @include size(100%, 100%);
     position: relative;
+    padding: 2em 0.8em 1em;
     z-index: 2;
   }
 
-  @media (max-width: 720px) {
+  @media screen and (max-width: 720px) {
     .selected-artists {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -524,14 +488,13 @@ main {
   }
 
   .remove-artist {
+    @include size(2em, 2em);
     position: absolute;
     top: 0.5em;
     right: 1em;
-    height: 2em;
-    width: 2em;
-    opacity: 0.3;
-    color: #333;
     font-size: 1.2em;
+    color: #333;
+    opacity: 0.3;
     transition: all 0.3s ease;
     animation: fade-in 0.5s ease;
 
@@ -551,30 +514,29 @@ main {
   }
 
   .artist-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid #fff;
+    @include size(120px, 120px);
     background-size: cover;
     background-position: center center;
+    border: 2px solid #fff;
+    border-radius: 50%;
   }
 
   .artist-title {
-    color: #4f605e;
-    font-weight: 300;
-    font-size: 1.4em;
     margin: 0.75em 0;
+    color: #4f605e;
+    font-size: 1.4em;
+    font-weight: 300;
     text-align: center;
   }
 
   .artist-url {
-    padding: 0.4em 1em;
-    border-radius: 1em;
-    text-decoration: none;
+    background-color: rgba(35, 207, 95, 0.5);
     color: #fff;
     font-size: 0.8em;
-    background-color: rgba(35, 207, 95, 0.5);
-    -webkit-transition: all 300ms ease-in-out;
+    padding: 0.4em 1em;
+    text-decoration: none;
+    border-radius: 1em;
+    transition: all 300ms ease-in-out;
   }
 
   .artist-url:hover {
@@ -600,7 +562,7 @@ main {
       background: rgba(135, 206, 235, 0.4);
     }
 
-    @media (max-width: 720px) {
+    @media screen and (max-width: 720px) {
       .playlist-btn {
         @include size(81vw, 2.5em);
 
@@ -622,17 +584,15 @@ main {
 
   .sound-bars {
     @include flex(row, center, center);
-    width: 100%;
-    height: 100%;
+    @include size(100%, 100%);
     left: 50%;
   }
 
   .bar {
     @include flex(row, center, center);
+    @include size(2px, 2px);
     background: #666;
     bottom: 1px;
-    height: 2px;
-    width: 2px;
     animation: sound 0ms -800ms linear infinite alternate;
   }
 
@@ -644,7 +604,7 @@ main {
 
     100% {
       opacity: 1;
-      height: 28px;
+      height: 20px;
     }
   }
 
@@ -693,29 +653,9 @@ main {
     animation-duration: 487ms;
   }
 
-  .bar:nth-child(10) {
-    left: 37px;
-    animation-duration: 417ms;
-  }
-
-  .bar:nth-child(11) {
-    left: 41px;
-    animation-duration: 497ms;
-  }
-
-  .bar:nth-child(12) {
-    left: 45px;
-    animation-duration: 414ms;
-  }
-
-  .bar:nth-child(13) {
-    left: 49px;
-    animation-duration: 457ms;
-  }
-
   iframe {
-    border-width: 0;
     width: 100%;
+    border-width: 0;
     animation: fade-in 0.5s ease-out;
   }
 
@@ -766,7 +706,7 @@ main {
         }
       }
 
-      @media (max-width: 720px) {
+      @media screen and (max-width: 720px) {
         input {
           @include size(80vw, 4em);
         }
@@ -779,10 +719,10 @@ main {
           @include size(81vw, 2.5em);
 
           &:active {
-            outline: 0;
-            border: 1px dashed rgba(51, 51, 51, 0);
-            color: lighten($primary-black, 25%);
             background: rgba(135, 206, 235, 0.4);
+            color: lighten($primary-black, 25%);
+            border: 1px dashed rgba(51, 51, 51, 0);
+            outline: 0;
           }
         }
       }
@@ -793,69 +733,14 @@ main {
 /* Footer */
 footer {
   @include flex(row, center, flex-end);
-  font-size: 0.7em;
-  height: 8vh;
+  @include size(100%, 8vh);
   margin-bottom: 0.3em;
+  font-size: 0.7em;
 }
 
-/* Audio Controls */
-.audioButtons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+/* Global animations */
 
-button.playButton,
-button.pauseButton {
-  border: none;
-  background-color: transparent;
-  margin-top: 2em;
-  margin-bottom: -4em;
-  font-size: 1.6em;
-  color: #f7f7f7;
-  width: 50px;
-  cursor: pointer;
-  transition: all 0.5s linear;
-}
-
-button.playButton:hover,
-button.pauseButton:hover,
-button.playButton:focus,
-button.pauseButton:focus {
-  outline: 0;
-  border: none;
-  background-color: transparent;
-  color: #07a7ec;
-  cursor: pointer;
-}
-
-button.playButton:focus,
-button.playButton:active {
-  animation: pulse 0.62s infinite;
-}
-
-button.pauseButton:focus,
-button.pauseButton:active {
-  color: #ec6007;
-  animation: pulse 0.62s infinite;
-}
-
-/* Pulsing animation */
-
-@keyframes pulse {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-
-  50% {
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-
+/* Slides */
 @keyframes slideInUp {
   0% {
     transform: translateY(100%);
@@ -868,6 +753,7 @@ button.pauseButton:active {
   }
 }
 
+/* Simple Fade In */
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }

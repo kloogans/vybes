@@ -14,8 +14,7 @@ class Menu extends Component {
           </label>
 
           <Link to='/' className='menu-item'> <i className='fa fa-home' /> </Link>
-          <a href='#' className='menu-item'> <i className='fa fa-user' /> </a>
-          <a href='#' className='menu-item'> <i className='fa fa-heart' /> </a>
+          <a href='#' className='menu-item'> <i className='fa fa-info' /> </a>
           <Link to='/contact' className='menu-item'> <i className='fa fa-envelope' /> </Link>
         </div>
       </nav>
