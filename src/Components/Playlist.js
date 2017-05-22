@@ -25,7 +25,17 @@ class Playlist extends Component {
       )
     } else {
       return (
-        <span>Loading...</span>
+        <div className='sound-bars'>
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+        </div>
       )
     }
   }

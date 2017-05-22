@@ -13,7 +13,7 @@ const shuffleArray = (array) => {
     array[i] = array[j]
     array[j] = temp
   }
-  return array.splice(0, 10)
+  return array.splice(0, 20)
 }
 
 export default (state = initialState, action) => {
