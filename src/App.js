@@ -2,12 +2,10 @@ import React, {Component} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Playlist from './Components/Playlist'
 import Contact from './Components/Contact'
+import Info from './Components/Info'
 import Logo from './Components/Logo'
 import Menu from './Components/Menu'
 import Home from './Components/Home'
-
-// The main stylesheet file.
-import './App.css'
 
 class App extends Component {
   render () {
@@ -19,6 +17,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/contact' component={Contact} />
+            <Route path='/info' component={Info} />
             <Route path='/playlist' component={Playlist} />
           </Switch>
         </main>
