@@ -1,0 +1,64 @@
+.Contact {
+  @include size(100%, 100%);
+  @include flex(column, center, center);
+  animation: slideInUp 0.3s ease;
+
+  form {
+    @include flex(column, center, center);
+
+    input,
+    textarea {
+      margin: 0.5em;
+      border: none;
+      border-radius: 2px;
+    }
+
+    input {
+      @include size(50vw, 4em);
+    }
+
+    textarea {
+      @include size(50vw, 10em);
+      resize: none;
+      overflow-y: scroll;
+    }
+
+    button {
+      @include size(51vw, 2.5em);
+      background-color: transparent;
+      border: 1px dashed rgba(51, 51, 51, 0.3);
+      color: lighten($primary-black, 30%);
+      font-size: 1.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s ease-out;
+
+      &:hover {
+        border: 1px dashed rgba(51, 51, 51, 0);
+        color: lighten($primary-black, 25%);
+        background: rgba(135, 206, 235, 0.4);
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      input {
+        @include size(80vw, 4em);
+      }
+
+      textarea {
+        @include size(80vw, 10em);
+      }
+
+      button {
+        @include size(81vw, 2.5em);
+
+        &:active {
+          background: rgba(135, 206, 235, 0.4);
+          color: lighten($primary-black, 25%);
+          border: 1px dashed rgba(51, 51, 51, 0);
+          outline: 0;
+        }
+      }
+    }
+  }
+}

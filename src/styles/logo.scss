@@ -1,0 +1,52 @@
+/* /Logo */
+
+.logo-container {
+  @include flex(column, center, center);
+  @include size(100%, 100%);
+  min-height: 150px;
+  padding: 1em 0 3em;
+  overflow: hidden;
+}
+
+.logo-dots {
+  @include size(137px, 137px);
+  @include background-props('logo-dots.svg', contain);
+  position: absolute;
+  margin: auto;
+  opacity: 0.6;
+  animation: rotateThis 40s linear infinite;
+}
+
+.logo-loader {
+  @extend .logo-dots;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  animation: rotateThis 10s linear infinite;
+}
+
+@keyframes rotateThis {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotateLoad {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.logo {
+  @include flex(row, center, center);
+  @include size(130px, 130px);
+  @include background-props('vybes-logo.svg', contain);
+  mix-blend-mode: screen;
+}

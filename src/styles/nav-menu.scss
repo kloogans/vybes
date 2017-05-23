@@ -1,0 +1,188 @@
+nav {
+  @include flex(row, flex-end, center);
+  width: 100%;
+
+  nav.menu {
+    height: 2em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-item,
+  .menu-open-button {
+    @include size(80px, 80px);
+    position: absolute;
+    top: 20px;
+    margin-left: -80px;
+    background: transparent;
+    color: transparent;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms;
+  }
+
+  .menu-item {
+    opacity: 0;
+  }
+
+  .menu-open {
+    display: none;
+  }
+
+  .hamburger {
+    @include size(25px, 1px);
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -1.5px;
+    background: $primary-black;
+    transition: transform 200ms;
+  }
+
+  .hamburger-1 {
+    transform: translate3d(0, -8px, 0);
+  }
+
+  .hamburger-2 {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .hamburger-3 {
+    transform: translate3d(0, 8px, 0);
+  }
+
+  .menu-open:checked + .menu-open-button .hamburger-1 {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+
+  .menu-open:checked + .menu-open-button .hamburger-2 {
+    transform: translate3d(0, 0, 0) scale(0.1, 1);
+  }
+
+  .menu-open:checked + .menu-open-button .hamburger-3 {
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+  }
+
+  .menu {
+    @include size(100%, 150px);
+    position: absolute;
+    box-sizing: border-box;
+    padding-left: 80px;
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .menu-item:hover {
+    background-color: rgba(62, 163, 228, 0.55);
+  }
+
+  .menu-item:nth-child(3) {
+    transition-duration: 180ms;
+  }
+
+  .menu-item:nth-child(4) {
+    transition-duration: 180ms;
+  }
+
+  .menu-item:nth-child(5) {
+    transition-duration: 180ms;
+  }
+
+  .menu-item:nth-child(6) {
+    transition-duration: 180ms;
+  }
+
+  .menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer;
+  }
+
+  .menu-open-button:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+  }
+
+  .menu-open:checked + .menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+  }
+
+  .menu-open:checked ~ .menu-item {
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: $primary-black;
+    background-color: $menu-background;
+    border-radius: 0;
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 190ms;
+    transform: translate3d(-100px, 0, 0);
+    opacity: 1;
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 290ms;
+    transform: translate3d(-180px, 0, 0);
+    opacity: 1;
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 390ms;
+    transform: translate3d(-260px, 0, 0);
+    opacity: 1;
+  }
+
+  .menu-open:checked ~ .menu-item:nth-child(6) {
+    transition-duration: 490ms;
+    transform: translate3d(-340px, 0, 0);
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1080px) {
+    nav.menu {
+      padding-left: 8vw;
+    }
+
+    .menu-open:checked ~ .menu-item {
+      width: 200px;
+      right: 0;
+      background-color: $menu-background;
+      color: $primary-black;
+      border-radius: 0;
+      transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 2;
+    }
+
+    .menu-open:checked ~ .menu-item:nth-child(3) {
+      transition-duration: 190ms;
+      transform: translate3d(0, 100px, 0);
+      opacity: 1;
+    }
+
+    .menu-open:checked ~ .menu-item:nth-child(4) {
+      transition-duration: 290ms;
+      transform: translate3d(0, 180px, 0);
+      opacity: 1;
+    }
+
+    .menu-open:checked ~ .menu-item:nth-child(5) {
+      transition-duration: 390ms;
+      transform: translate3d(0, 260px, 0);
+      opacity: 1;
+    }
+
+    .menu-open:checked ~ .menu-item:nth-child(6) {
+      transition-duration: 490ms;
+      transform: translate3d(0, 340px, 0);
+      opacity: 1;
+    }
+  }
+}
