@@ -1,11 +1,4 @@
 /* Search */
-ul {
-  @include flex(column, center, center);
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 .container {
   @include flex(column, center, center);
@@ -18,7 +11,7 @@ ul {
   margin-bottom: 4em;
 }
 
-.artist-input {
+.spotify-form__artist-input {
   @include size(50vw, 2em);
   background: transparent;
   color: $primary-black;
@@ -36,7 +29,7 @@ ul {
 }
 
 @media screen and (max-width: 720px) {
-  .artist-input {
+  .spotify-form__artist-input {
     width: 80vw;
   }
 }

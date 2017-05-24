@@ -9,8 +9,8 @@ class SelectedArtists extends Component {
       return (<span />)
     } else if (this.props.selected.artists.length > 0) {
       return (
-        <div className='container section'>
-          <h2 className='small-heading'>Selected Artists</h2>
+        <div className='container artist'>
+          <h2>Selected Artists</h2>
           <ul className='selected-artists'>
             {this.props.selected.artists.map((artist) =>
               <li className='artist-card' key={artist.id}>

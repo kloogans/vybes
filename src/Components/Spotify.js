@@ -28,7 +28,7 @@ class Spotify extends Component {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='artist-input'
+            <input className='spotify-form__artist-input'
               type='text'
               ref='query'
               placeholder='Artist search'
@@ -40,7 +40,7 @@ class Spotify extends Component {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='artist-input'
+            <input className='spotify-form__artist-input'
               type='text'
               ref='query'
               placeholder='Artist search'
@@ -48,10 +48,10 @@ class Spotify extends Component {
             />
           </form>
           <div className='live-results'>
-            <h2 className='small-heading title'>Suggestions</h2>
+            <h2 className='live-results__small-heading'>Suggestions</h2>
             <ul>
               {this.props.results.map((artist) =>
-                <li className='results-tag' key={artist.id}
+                <li className='live-results__results-tag' key={artist.id}
                   onClick={() => this.handleSelect(artist)}>
                   {artist.name}
                 </li>
