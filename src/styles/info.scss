@@ -9,11 +9,11 @@
   }
 
   h1 {
-    color: $primary-black;
+    color: lighten($primary-black, 50%);
     font-family: 'Work Sans';
     font-size: 5em;
     font-weight: 100;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     margin: 0.1em;
     text-transform: uppercase;
   }
@@ -46,11 +46,11 @@
         background-color: darken($primary-blue, 10%);
       }
     }
+  }
 
-    @media screen and (max-width: 720px) {
-      .Info__info-container {
-        width: 80vw;
-      }
+  @media screen and (max-width: 720px) {
+    .Info__info-container {
+      width: 80vw;
     }
   }
 }
