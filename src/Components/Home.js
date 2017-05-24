@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Spotify from './Spotify'
 import SelectedArtists from './SelectedArtists'
 import BuildButton from './BuildButton'
@@ -19,7 +20,7 @@ class Home extends Component {
       return <div className='Home'>
         <Logo />
         <Spotify />
-        <SelectedArtists />
+        <Link className={this.props.artists.length === 0 ? 'show' : 'hidden'} to='/info'>How's it work?</Link>
       </div>
     }
   }

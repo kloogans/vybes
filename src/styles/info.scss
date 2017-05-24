@@ -1,6 +1,7 @@
 .Info {
   @include flex(column, center, center);
   @include size(100vw, 100%);
+  animation: fade-in 0.5s ease-in;
 
   .Info__info-container {
     @include flex(column, center, center);

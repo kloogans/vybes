@@ -1,4 +1,4 @@
-import './index.css'
+import './index.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 // Import provider to pass data from store to container.

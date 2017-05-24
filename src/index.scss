@@ -61,6 +61,21 @@ main {
 
   a {
     text-decoration: none;
+    color: darken($primary-blue, 20%);
+    transition: color 0.3s ease-out;
+
+    &:focus,
+    &:hover {
+      color: darken($primary-blue, 30%);
+    }
+  }
+
+  .show {
+    visibility: visible;
+  }
+
+  .hidden {
+    visibility: hidden;
   }
 }
 
