@@ -23,8 +23,9 @@ class BuildButton extends Component {
           onClick={() => this.props.buildPlaylist(this.props.artists)}
           onMouseOver={this._hover} onMouseOut={this._hover}>
           <div className='sound-bars'>
+            <span className={this.state.hover ? 'hidden' : 'visible'}>Go</span>
             {bars.map((_, i) => {
-              return <div className={this.state.hover ? 'bar move' : 'bar'} key={i} />
+              return <div className={this.state.hover ? 'bar move' : ''} key={i} />
             })}
           </div>
         </div>

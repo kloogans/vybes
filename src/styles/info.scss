@@ -1,0 +1,60 @@
+.Info {
+  @include flex(column, center, center);
+  @include size(100vw, 100%);
+
+  .Info__info-container {
+    @include flex(column, center, center);
+    width: 40vw;
+  }
+
+  h1 {
+    color: $primary-black;
+    font-family: 'Work Sans';
+    font-size: 5em;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin: 0.1em;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: darken($primary-blue, 10%);
+    transition: color 0.3s ease-out;
+
+    &:focus,
+    &:hover {
+      color: darken($primary-blue, 20%);
+    }
+  }
+
+  ul {
+    @include flex(column, center, center);
+    width: 100%;
+    list-style: none;
+
+    li {
+      width: 100%;
+      background-color: $primary-blue;
+      padding: 0.5em;
+      margin: 0.3em 0;
+      text-align: left;
+      cursor: default;
+      transition: background-color 0.3s ease-out;
+
+      &:hover {
+        background-color: darken($primary-blue, 10%);
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      .Info__info-container {
+        width: 80vw;
+      }
+    }
+  }
+}
+
+.Info__instructions {
+  padding: 0;
+  list-style: none;
+}

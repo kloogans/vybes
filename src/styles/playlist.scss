@@ -15,6 +15,14 @@
     border: 1px dashed rgba(51, 51, 51, 0);
     color: lighten($primary-black, 25%);
     background: rgba(135, 206, 235, 0.4);
+
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: inline-block;
+    }
   }
 
   @media screen and (max-width: 720px) {
@@ -34,7 +42,7 @@
 .sound-bars {
   @include flex(row, center, center);
   @include size(100%, 100%);
-  left: 50%;
+  // left: 50%;
 }
 
 .bar {
@@ -45,6 +53,7 @@
 }
 
 .move {
+  visibility: visible;
   animation: sound 0ms -800ms linear infinite alternate;
 }
 
@@ -105,12 +114,6 @@
   animation-duration: 487ms;
 }
 
-iframe {
-  width: 100%;
-  border-width: 0;
-  animation: fade-in 0.5s ease-out;
-}
-
-.spotify-iframe {
-  margin: 2em auto;
-}
+// .spotify-iframe {
+//   margin: 2em auto;
+// }

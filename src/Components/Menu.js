@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
+import enhanceWithClickOutside from 'react-click-outside'
 import { Link } from 'react-router-dom'
 
 class Menu extends Component {
+  state = {
+    isOpened: false
+  }
+
+  handleClickOutside () {
+    this.setState({ isOpened: !this.state.isOpened })
+    console.log(this.state.isOpened)
+  }
   render () {
     return <header>
       <nav className='menu'>
@@ -22,4 +31,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu
+export default enhanceWithClickOutside(Menu)

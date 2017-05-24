@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Playlist from './Components/Playlist'
 import Contact from './Components/Contact'
 import Info from './Components/Info'
-import Logo from './Components/Logo'
+// import Logo from './Components/Logo'
 import Menu from './Components/Menu'
 import Home from './Components/Home'
 
@@ -13,7 +13,7 @@ class App extends Component {
       <div className='app'>
         <Menu />
         <main>
-          <Logo />
+          {/* <Logo /> */}
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/contact' component={Contact} />

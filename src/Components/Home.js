@@ -3,18 +3,21 @@ import Spotify from './Spotify'
 import SelectedArtists from './SelectedArtists'
 import BuildButton from './BuildButton'
 import { connect } from 'react-redux'
+import Logo from './Logo'
 // import Playlist from './Playlist'
 
 class Home extends Component {
   render () {
     if (this.props.artists.length !== 0) {
       return <div className='Home'>
+        <Logo />
         <Spotify />
         <SelectedArtists />
         <BuildButton />
       </div>
     } else {
       return <div className='Home'>
+        <Logo />
         <Spotify />
         <SelectedArtists />
       </div>
