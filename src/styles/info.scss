@@ -5,7 +5,12 @@
 
   .Info__info-container {
     @include flex(column, center, center);
+    min-height: 100vh;
     width: 40vw;
+  }
+
+  .Info__welcome {
+    height: 100%;
   }
 
   h1 {
@@ -48,8 +53,13 @@
     }
   }
 
+  .Info__try-it {
+    height: 100%;
+  }
+
   @media screen and (max-width: 720px) {
     .Info__info-container {
+      min-height: 100%;
       width: 80vw;
     }
   }
