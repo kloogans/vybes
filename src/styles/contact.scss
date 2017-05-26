@@ -1,6 +1,7 @@
 .Contact {
   @include size(100%, 100%);
   @include flex(column, center, center);
+  min-width: 100%;
   animation: slideInUp 0.3s ease;
 
   form {

@@ -43,7 +43,7 @@ body {
 
 .app {
   @include flex(column, space-between, center);
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0;
   overflow-x: hidden;
 }
