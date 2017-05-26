@@ -4,7 +4,7 @@
   @include flex(column, center, center);
   @include size(100%, 100%);
   min-height: 150px;
-  padding: 1em 0 3em;
+  padding: 1em 0;
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
   @include size(137px, 137px);
   @include background-props('logo-dots.svg', contain);
   position: absolute;
-  margin: auto;
+  margin: 0.03em auto;
   opacity: 0.6;
   animation: rotateThis 40s linear infinite;
 }

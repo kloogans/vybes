@@ -11,14 +11,12 @@ class Home extends Component {
   render () {
     if (this.props.artists.length !== 0) {
       return <div className='Home'>
-        <Logo />
         <Spotify />
         <SelectedArtists />
         <BuildButton />
       </div>
     } else {
       return <div className='Home'>
-        <Logo />
         <Spotify />
         <div className={this.props.artists.length === 0 ? 'Home__more-info' : 'hidden'}>
           <Link to='/info'>How's it work?</Link>

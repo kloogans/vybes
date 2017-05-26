@@ -8,19 +8,37 @@
 
     input,
     textarea {
-      margin: 0.5em;
+      margin: 0.2em;
       border: none;
       border-radius: 2px;
+
+      &:focus {
+        outline: 0;
+      }
     }
 
     input {
-      @include size(50vw, 4em);
+      @include size(50vw, 60px);
+      color: $primary-blue;
+      font-size: 2em;
+
+      ::-webkit-input-placeholder {
+        color: ligthen($primary-black, 25%);
+        font-size: 1.2em;
+        line-height: 60px;
+      }
     }
 
     textarea {
-      @include size(50vw, 10em);
+      @include size(50vw, 200px);
+      color: $primary-blue;
+      font-size: 1.2em;
       resize: none;
-      overflow-y: scroll;
+      overflow-y: auto;
+    }
+
+    textarea::placeholder {
+      font-size: 1.4em;
     }
 
     button {
@@ -42,11 +60,11 @@
 
     @media screen and (max-width: 720px) {
       input {
-        @include size(80vw, 4em);
+        @include size(80vw, 60px);
       }
 
       textarea {
-        @include size(80vw, 10em);
+        @include size(80vw, 200px);
       }
 
       button {

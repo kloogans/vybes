@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import Logo from './Logo'
 
 class Contact extends Component {
   render () {
     return <div className='Contact'>
-      <Logo />
       <h1> Get in touch</h1>
       <form className='contact-form'>
         <input name='name' type='text' placeholder='Name' />

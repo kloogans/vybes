@@ -4,8 +4,8 @@
   animation: fade-in 0.5s ease-in;
 
   .Info__info-container {
-    @include flex(column, center, center);
-    min-height: 100vh;
+    @include flex(column, flex-start, center);
+    min-height: 100%;
     width: 40vw;
   }
 
@@ -39,16 +39,16 @@
     list-style: none;
 
     li {
+      @include linear-grad($primary-blue, transparentize($primary-blue, 0.7));
       width: 100%;
-      background-color: $primary-blue;
       padding: 0.5em;
       margin: 0.3em 0;
       text-align: left;
       cursor: default;
-      transition: background-color 0.3s ease-out;
+      transition: all 0.3s ease-out;
 
       &:hover {
-        background-color: darken($primary-blue, 10%);
+        background-color: $primary-blue;
       }
     }
   }

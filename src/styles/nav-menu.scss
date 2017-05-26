@@ -118,7 +118,7 @@ nav {
   .menu-open:checked ~ .menu-item {
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     color: $primary-black;
-    background-color: $menu-background;
+    background-color: transparentize($menu-background, 0.3);
     border-radius: 0;
   }
 
@@ -154,7 +154,7 @@ nav {
     .menu-open:checked ~ .menu-item {
       width: 200px;
       right: 0;
-      background-color: $menu-background;
+      background-color: transparentize($menu-background, 0.1);
       color: $primary-black;
       border-radius: 0;
       transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
