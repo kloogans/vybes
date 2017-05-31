@@ -6,7 +6,7 @@ import Info from './Components/Info'
 import Logo from './Components/Logo'
 import Menu from './Components/Menu'
 import Home from './Components/Home'
-
+import Login from './Components/Login'
 class App extends Component {
   render () {
     return <Router>
@@ -16,6 +16,7 @@ class App extends Component {
           <Logo />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route path='/login' component={Login} />
             <Route path='/contact' component={Contact} />
             <Route path='/info' component={Info} />
             <Route path='/playlist' component={Playlist} />
@@ -27,27 +28,6 @@ class App extends Component {
       </div>
     </Router>
   }
-
-  // componentWillMount () {
-  //   // Called the first time the component is loaded
-  //   // right before the component is added to the page.
-  // }
-  //
-  // componentDidMount () {
-  //   // Called after the component has been rendered into the page.
-  // }
-  //
-  // componentWillReceiveProps (nextProps) {
-  //   // Called when the props provided to the component are changed.
-  // }
-  //
-  // componentWillUpdate (nextProps, nextState) {
-  //   // Called when the props and/or state change.
-  // }
-  //
-  // componentWillUnmount () {
-  //   // Called when the component is removed.
-  // }
 }
 
 export default App

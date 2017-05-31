@@ -1,7 +1,10 @@
 import axios from 'axios'
 
 const spotifyClient = (artist) => {
-  return axios.get(`${artist.href}/top-tracks?country=US`)
+  const token = window.localStorage.getItem('spotify:token')
+  return axios.get(`${artist.href}/top-tracks?country=US`, {
+    headers: { 'Authorization': `Bearer ${token}` }
+  })
               .then((response) => {
                 return response.data
               })

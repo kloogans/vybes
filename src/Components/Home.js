@@ -1,27 +1,31 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Spotify from './Spotify'
 import SelectedArtists from './SelectedArtists'
 import BuildButton from './BuildButton'
 import { connect } from 'react-redux'
-import Logo from './Logo'
+// import Logo from './Logo'
 // import Playlist from './Playlist'
 
 class Home extends Component {
   render () {
-    if (this.props.artists.length !== 0) {
-      return <div className='Home'>
-        <Spotify />
-        <SelectedArtists />
-        <BuildButton />
-      </div>
+    if (!window.localStorage.getItem('spotify:token')) {
+      return <Redirect to='/login' />
     } else {
-      return <div className='Home'>
-        <Spotify />
-        <div className={this.props.artists.length === 0 ? 'Home__more-info' : 'hidden'}>
-          <Link to='/info'>How's it work?</Link>
+      if (this.props.artists.length !== 0) {
+        return <div className='Home'>
+          <Spotify />
+          <SelectedArtists />
+          <BuildButton />
         </div>
-      </div>
+      } else {
+        return <div className='Home'>
+          <Spotify />
+          <div className={this.props.artists.length === 0 ? 'Home__more-info' : 'hidden'}>
+            <Link to='/info'>How's it work?</Link>
+          </div>
+        </div>
+      }
     }
   }
 }

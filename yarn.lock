@@ -2812,6 +2812,10 @@ get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
+get-spotify-client-credentials@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/get-spotify-client-credentials/-/get-spotify-client-credentials-1.0.0.tgz#13f3a45cc74915c995e8518c04300216c64becc7"
+
 get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
