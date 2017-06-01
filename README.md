@@ -6,4 +6,4 @@ artist, album, track data, and search information from Spotify's API.
 ![](./vybes.gif)
 
 I created Vybes to extract a complex feature from Spotify, and simplify it for
-user and for myself. 
+the user and for myself. 
