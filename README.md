@@ -1,2 +1,9 @@
 # Vybes
-A lightweight playlist generator. Search multiple artists and create a playlist of randomized track. Vybes was created using React and Redux. It pulls artist, album, and track data from Spotify's API.
+A lightweight playlist generator. Live search multiple artists and create a
+playlist of randomized tracks. Vybes was created using React and Redux. It pulls
+artist, album, track data, and search information from Spotify's API.
+
+![](./vybes.gif)
+
+I created Vybes to extract a complex feature from Spotify, and simplify it for
+user and for myself. 
