@@ -22,7 +22,7 @@ class Home extends Component {
         return <div className='Home'>
           <Spotify />
           <div className={this.props.artists.length === 0 ? 'Home__more-info' : 'hidden'}>
-            <Link to='/info'>How's it work?</Link>
+            <Link to='/info' title='Instructions for building a playlist' tabIndex='2'>How's it work?</Link>
           </div>
         </div>
       }

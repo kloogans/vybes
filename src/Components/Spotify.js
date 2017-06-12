@@ -28,11 +28,19 @@ class Spotify extends Component {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='spotify-form__artist-input'
+            <label htmlFor='artistSearch'>
+              <span className='hidden'>
+              Search for an artist you like.
+            </span>
+            </label>
+            <input id='artistSearch'
+              className='spotify-form__artist-input'
               type='text'
               ref='query'
               placeholder='Artist search'
-              onChange={() => this.props.searchArtist(this.refs.query.value)} />
+              title='Search for an artist'
+              onChange={() => this.props.searchArtist(this.refs.query.value)}
+              tabIndex='1' />
           </form>
         </div>
       )
@@ -40,7 +48,14 @@ class Spotify extends Component {
       return (
         <div className='container'>
           <form className='spotify-form'>
-            <input className='spotify-form__artist-input'
+            <label htmlFor='artistSearch'>
+              <span className='hidden'>
+              Search for an artist you like.
+            </span>
+            </label>
+            <input id='artistSearch'
+              className='spotify-form__artist-input'
+              tabIndex='1'
               type='text'
               ref='query'
               placeholder='Artist search'

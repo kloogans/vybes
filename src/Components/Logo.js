@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Logo extends Component {
   render () {
     return <div className='logo-container'>
-      <a href='/'>
+      <a href='/' title='Home'>
         <div className='circles'>
           <div className='logo'>
             <div className='logo-dots' />
