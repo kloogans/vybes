@@ -27,7 +27,7 @@ class Spotify extends Component {
     } else if (this.props.fetchState || this.props.results.length === 0) {
       return (
         <div className='container'>
-          <form className='spotify-form'>
+          <form autoComplete='off' className='spotify-form'>
             <label htmlFor='artistSearch'>
               <span className='hidden'>
               Search for an artist you like.

@@ -9,10 +9,10 @@
 }
 
 .logo-dots {
-  @include size(137px, 137px);
+  @include size(136px, 136px);
   @include background-props('logo-dots.svg', contain);
   position: absolute;
-  margin: 0.03em auto;
+  margin: 0 auto;
   opacity: 0.6;
   animation: rotateThis 40s linear infinite;
 }
